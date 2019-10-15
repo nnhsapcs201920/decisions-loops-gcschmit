@@ -123,7 +123,9 @@ public class Notes
         }
         
         /*
-         * 
+         * The equals method returns true if the two objects referenced by the variables are "equal".
+         *      What equal means is defined by the class. For Strings, it means that the two objects
+         *      have the same sequence of characters.
          */
         if(str1.equals(str2))
         {
@@ -132,6 +134,38 @@ public class Notes
         else
         {
             System.out.println("strings are not equal");
+        }
+        
+        /*
+         * We will determine which string comes first lexicographically using the compareTo method
+         *      of the String class.
+         *      
+         *  compareTo returns an int:
+         *      0:      if the strings are equal (same sequence of characters)
+         *      < 0:    if str1 < str2 lexicographically
+         *      > 0:    if str1 > str2 lexicographically
+         */
+        int result = str1.compareTo(str2);
+        
+        String firstStr = null;
+        
+        if(result < 0)
+        {
+            firstStr = str1;
+        }
+        else if(result > 0)
+        {
+            firstStr = str2;
+        }
+        
+        if(firstStr != null)
+        {
+            System.out.println("The first string is: " + firstStr);
+            System.out.println("Its length is: " + firstStr.length());
+        }
+        else
+        {
+            System.out.println("strings are equal");
         }
     }
 }
