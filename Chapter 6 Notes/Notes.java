@@ -91,6 +91,55 @@ public class Notes
         System.out.println("final value of count: " + count);
     }
     
+    public static void offByOne()
+    {
+        /*
+         * The infamous off-by-one error is common with for loops
+         *      executing one too many or one too few times.
+         *      
+         *  Carefully ask:  should the initial value start at 0 or 1?
+         *                  should the condition < or <= ?
+         *                  
+         *      "Think! Don't compile and try at random!"
+         *      
+         *  By convention, for simple for loops we start at 0 and we use < .
+         */
+        
+        // we want to print five "*"
+        for(int i = 0;                          // initialization
+                i <= 5; // should  be i < 5     // condition
+                i++)                            // update the loop variable
+        {
+            System.out.println("*");            // body
+        }
+        
+        System.out.println("done");
+    }
+    
+    public static void doExample()
+    {
+        /*
+         * do loop (do-while loop):
+         * 
+         *      1. executes the body of the loop
+         *      2. evaluates the condition:
+         *          if true, executes the body of the loop again
+         *          if false, continues execution after the loop
+         */
+        
+        int count = 1;                          // initialization
+        
+        do
+        {
+            System.out.println(count);          // body
+            
+            count++;                            // update the loop variable
+        }
+        while(count <= 5);                      // condition
+        
+        System.out.println("done");
+    }
+    
 }
 
 
