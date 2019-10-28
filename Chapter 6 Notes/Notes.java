@@ -138,6 +138,102 @@ public class Notes
         System.out.println("done");
     }
     
+    public static int sum()
+    {
+        Scanner s = new Scanner(System.in);
+        
+        int sum = 0;
+        int value;
+        
+        do
+        {
+            System.out.print("enter a positive integer (-1 to quit): ");
+            
+            /*
+             * Sentinel Value
+             *      Value (e.g., -1) used to terminate a loop. It is often entered by a user.
+             */
+            value = s.nextInt();
+            
+            // this is a bug! sum is 1 less than it should be
+            sum += value;
+        }
+        while(value != -1);
+        
+        return sum;
+    }
+    
+    public static int sum2()
+    {
+        Scanner s = new Scanner(System.in);
+        
+        int sum = 0;
+        int value;
+        
+        do
+        {
+            System.out.print("enter a positive integer (-1 to quit): ");
+            
+            value = s.nextInt();
+            if(value == -1)
+            {
+                /*
+                 * break
+                 *      Immediately exits the inner-most loop. Similar behavior as used in the switch
+                 *          statement.
+                 */
+                break;
+            }
+            
+            sum += value;
+        }
+        while(value != -1);
+        
+        return sum;
+    }
+    
+    public static int sum3()
+    {
+        Scanner s = new Scanner(System.in);
+        
+        int sum = 0;
+        int value = 0;
+        
+        do
+        {
+            System.out.print("enter a positive integer (-1 to quit): ");
+            
+            /*
+             * The hasNextInt method of the Scanner class returns true if the next token to be read
+             *      is an integer; otherwise, it returns false.  It does not consume the next token.
+             *      If there are no tokens in the stream, it waits until there are.
+             */
+            if(s.hasNextInt() == false)
+            {
+                System.out.println("\"" + s.next() + "\" is not an integer; try again.");
+                
+                /*
+                 * continue
+                 *      1. immediately skips to the end of the inner-most loop
+                 *      2. re-evaluates the loop condition at that point and cotinues if the
+                 *          condition is true
+                 */
+                continue;
+            }
+            
+            value = s.nextInt();
+            if(value == -1)
+            {
+                break;
+            }
+            
+            sum += value;
+        }
+        while(value != -1);
+        
+        return sum;
+    }
+    
 }
 
 
