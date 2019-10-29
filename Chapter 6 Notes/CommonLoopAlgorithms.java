@@ -207,4 +207,18 @@ public class CommonLoopAlgorithms
         }
     }
 
+    public static void loopExtension()
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+
+        int input = s.nextInt();
+        String inputAsString = ""+input;
+        int inputLength = inputAsString.length();
+        for(int i = inputLength; i >0 ; i--)
+        {
+            System.out.println(inputAsString.substring(i-1,i));
+        }
+    }
+
 }
