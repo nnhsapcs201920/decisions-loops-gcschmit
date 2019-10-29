@@ -163,39 +163,31 @@ public class CommonLoopAlgorithms
         return l;
     }
 
-    public static int askForInteger(Scanner s) {
-        //System.out.print("Enter an integer: ");
-        // if (s.hasNextInt())
-        // int value = s.nextInt();
-
-        //return s.nextInt();
-        System.out.print("Enter an integer: ");
-        while (s.hasNext()) {
-
-            if (s.hasNextInt()) {
-                return s.nextInt();
-            }
-            System.out.print(s.next() + " is not an integer. Enter an integer:");
-        }
-        return 0;
-    }
-
     /*
-     * Loop Algorithm #6: Compare Adjacent Values
+    * Loop Algorithm #6: Compare Adjacent Values
      * reads a series of numbers until an adjacent duplicate
      * number is entered
-     * @return the adjacent duplicate number that was entered
-     */
-    public static int compareAdjacent() {
-        Scanner s = new Scanner(System.in);
-        int value = askForInteger(s);
-        while (true) {
-            int newValue = askForInteger(s);
-            if (newValue == value) break;
-            value = newValue;
-        }
-        return value;
-    }
+    * @return the adjacent duplicate number that was entered
+    */
+   public static int compareAdjacent() {
+       Scanner s = new Scanner(System.in);
+       int value = askForInteger(s);
+       while (true) {
+           int newValue = askForInteger(s);
+           if (newValue == value) break;
+           value = newValue;
+       }
+       return value;
+   }
+   
+   public static int askForInteger(Scanner s) {
+      System.out.print("Enter an integer: ");
+      while (s.hasNext()) {
+         if (s.hasNextInt()) return s.nextInt();
+         System.out.print(s.next() + " is not an integer. Enter an integer: ");
+      }
+      return 0;
+   }
 
     /*
      * Extension. Group 1
