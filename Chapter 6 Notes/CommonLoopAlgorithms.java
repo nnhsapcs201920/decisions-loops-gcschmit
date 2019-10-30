@@ -81,7 +81,6 @@ public class CommonLoopAlgorithms
             else
             {
                 count++;
-                continue;
             }
         }
         while (count >= 0);
@@ -149,7 +148,21 @@ public class CommonLoopAlgorithms
      */
     public static int findMin()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        int minValue = Integer.MAX_VALUE;
+        System.out.print("enter any number (enter a letter to quit): ");
+        while (s.hasNextInt () == true)
+        {
+            int value = s.nextInt();
+
+            if (value <= minValue)
+            {
+                minValue = value;
+            }
+
+            System.out.print("enter any number (enter a letter to quit): ");
+        }
+        return minValue;
     }
 
     /*
@@ -161,10 +174,11 @@ public class CommonLoopAlgorithms
     public static int compareAdjacent()
     {
         int val1 = 0;
-        int val2 = -1;
+        int val2;
         boolean adjacent = false;
         Scanner s = new Scanner(System.in);
         System.out.print("Input a string of numbers:");
+        val2 = s.nextInt();
         while(adjacent == false)
         {
             val1 = s.nextInt();
