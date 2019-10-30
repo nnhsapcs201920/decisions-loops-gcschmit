@@ -171,11 +171,11 @@ public class CommonLoopAlgorithms
     */
    public static int compareAdjacent() {
        Scanner s = new Scanner(System.in);
-       int value = askForInteger(s);
+       int prevValue = askForInteger(s);
        while (true) {
            int newValue = askForInteger(s);
-           if (newValue == value) break;
-           value = newValue;
+           if (newValue == prevValue) break;
+           prevValue = newValue;
        }
        return value;
    }
