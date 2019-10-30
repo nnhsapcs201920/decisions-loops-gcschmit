@@ -207,5 +207,23 @@ public class CommonLoopAlgorithms
 
         return newNum;
     }
-
+    
+    /*
+     * Loop Algorithm #7: Integer Deconstruction
+     * Write an algorithm to identify the individual digits in an integer. 
+     */
+    public static void integerDeconstruction()
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int value = s.nextInt();
+        String valueStr = "" + value;
+        
+        for(int i = 0; i < valueStr.length(); i++)
+        {
+            System.out.println(value % 10);
+            value /= 10;
+        }
+    }
+        
 }
